@@ -22,6 +22,7 @@ all:
 
 deps:
 	go get github.com/sparrc/gdm
+	(cd $(GOPATH)/src/github.com/sparrc/gdm && sed -i "s/Parallel bool = true/Parallel bool = false/g" main.go && go build && go install)
 	gdm restore
 
 telegraf:
